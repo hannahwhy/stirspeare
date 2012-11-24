@@ -1,0 +1,9 @@
+*.o
+*.brn
+*.trn
+*.log
+data
+megahal.txt
+megahal.swp
+megahal.dic
+megahal-engine

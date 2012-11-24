@@ -1,0 +1,12 @@
+1. Stirspeare
+
+This is a pretty stupid bot that's been kicking around various channels on
+synIRC for a while.  It's been rewritten several times and I figure that I
+might as well give it a home.
+
+Stirspeare currently uses MegaHAL 9.1.1 as its text synthesis engine.
+
+
+2. License
+
+Stirspeare, like MegaHAL, is licensed under the GNU GPL version 2.

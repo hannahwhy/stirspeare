@@ -1,0 +1,9 @@
+megahal_engine: ./megahal-9.1.1/megahal-engine
+megahal_data_dir: ./data
+irc:
+  server: irc.synirc.org
+  port: 6667
+  join:
+    - "#stirspeare-test"
+  nick: Stirspeare
+  user: stirspeare
