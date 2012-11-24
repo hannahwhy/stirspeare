@@ -51,6 +51,8 @@ class Megahal
   def save
     @io.write("#SAVE\n\n")
 
+    # #SAVE outputs a reply, so be sure to consume it
+    ::IO.select([@io])
     resync
   end
 
@@ -69,6 +71,8 @@ class Megahal
   def start
     @io = ::IO.popen(command, 'w+')
 
+    # Startup outputs a reply, so be sure to consume it
+    ::IO.select([@io])
     resync
   end
 
