@@ -34,18 +34,17 @@ class Megahal
     @io.write(string)
     @io.write("\n\n")
 
-    lines = []
+    ::IO.select([@io])
 
-    loop do
-      line = @io.readline.strip
-      lines << line
+    reply = ""
 
-      if line =~ /[^\w]$/
-        break
-      end
+    begin
+      loop { reply << @io.read_nonblock(128) }
+    rescue ::IO::WaitReadable
+      # done
     end
 
-    lines.join(' ')
+    reply.gsub(/[\t\n]/, ' ')
   end
 
   def save
