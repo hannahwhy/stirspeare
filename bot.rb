@@ -117,7 +117,13 @@ class IrcClient
     info "Registering with username #{@user}, nick #{@nick}"
 
     @socket.write "USER #{@user} #{@user} #{@user} : #{@user}\n"
-    @socket.write "NICK #{@nick}\n"
+    nick @nick
+  end
+
+  def nick(n)
+    info "Changing nick to #{n}"
+    @nick = n
+    @socket.write "NICK #{n}\n"
   end
 
   def quit
